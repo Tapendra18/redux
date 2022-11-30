@@ -1,22 +1,14 @@
-export const addTodo = (data) =>{
-    return {
-        type:"ADD_TODO",
-        payload:{
-            id : new Date().toString(),
-            data:data
-        }
-    }
-}
+const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+const LOGIN_ERROR = "LOGIN_ERROR";
 
-export const deleteTodo = (id) =>{
-    return {
-        type :"DELETE_TODO",
-        id
-    }
-}
+export const setLoginSuccess = isLoginSuccessful => ({
+  type: LOGIN_SUCCESS,
+  isLoginSuccessful
+});
 
-export const removeTodo = () =>{
-    return {
-        type :"REMOVE_TODO"
-    }
-}
+export const setLoginError = error => ({
+  type: LOGIN_ERROR,
+  error
+});
+
+export default {setLoginError , setLoginSuccess};

@@ -1,8 +1,8 @@
-import {createStore} from "redux";
+import { createStore, combineReducers } from "redux";
+import { index } from "./reducers/index";
 
-import rootReducer from "./reducers/index";
-
-const store = createStore(rootReducer);
-
-export default store;
-
+export default createStore(
+  combineReducers({
+    form: index
+  })
+);
